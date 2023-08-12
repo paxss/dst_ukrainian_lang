@@ -18,11 +18,21 @@ print("Завантаження файлу локалізації")
 env.LoadPOFile(main.StorePath..main.MainPoFile, main.SelectedLanguage)
 main.PO = LanguageTranslator.languages[main.SelectedLanguage]
 
-for k, v in pairs(main.PO) do
-	if v == "<порожньо>" or v == "" or v:find("*PLACEHOLDER") then
-		main.PO[k] = nil
-	end
+--for k, v in pairs(main.PO) do
+--	if v == "<порожньо>" or v == "" or v:find("*PLACEHOLDER") then
+--		main.PO[k] = nil
+--	end
+--end
+
+
+if main.Z_PATRIOT then
+	modimport('scripts/speech_filters/z_merm.lua')
+
+else
+	modimport('scripts/speech_filters/default_merm.lua')
 end
+
+
 print("Файл заванатажено")
 
 local ua = main.PO 

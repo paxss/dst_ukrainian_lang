@@ -17,8 +17,16 @@ mods.UkrainianLang = {
 	StorePath = MODROOT,
 
 	MainPoFile = "ukrainian.po",
-	SelectedLanguage = "ua"
+	SelectedLanguage = "ua",
+
+	Z_PATRIOT = false
 }
+
+if GetModConfigData("Z_PATRIOT") then
+	mods.UkrainianLang.Z_PATRIOT = true
+else
+	mods.UkrainianLang.Z_PATRIOT = false
+end
 
 local SelectedLanguage = "ua"
 
